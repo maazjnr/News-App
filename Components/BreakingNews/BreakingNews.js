@@ -10,11 +10,12 @@ import ImageBg from "../../Assets/m0stafa_k787-20210904-0004.jpg";
 import { ScrollView } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
 
-//https://dribbble.com/shots/20787913-Hoaks-News-App?utm_source=Clipboard_Shot&utm_campaign=Bimgraph&utm_content=Hoaks%20-%20News%20App&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=Bimgraph&utm_content=Hoaks%20-%20News%20App&utm_medium=Social_Share
+const API_KEY = 'https://newsdata.io/api/1/news?apikey=pub_2239027188f79e2e451fa7a2d13c6958564aa&q=business '
 
 const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
 const BreakingNews = () => {
+  
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
   
