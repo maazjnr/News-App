@@ -11,17 +11,16 @@ const DataFetch = (endpoint, query) => {
   console.log(data);
   const options = {
     method: "GET",
-    url: `https://newsdata.io/api/1/news?apikey=pub_2239027188f79e2e451fa7a2d13c6958564aa&q=business`,
-    params: { ...query },
+    url: `https://newsdata.io/api/1/news?apikey=pub_2239027188f79e2e451fa7a2d13c6958564aa&q=business`
   };
 
-  const fetchData = async () => {
+  const DataFetch = async () => {
     setIsLoading(true);
 
     try {
       const response = await axios.request(options);
 
-      setData(response.data.data);
+      setData(response.results);
       setIsLoading(false);
     } catch (error) {
       setError(error);
@@ -32,12 +31,12 @@ const DataFetch = (endpoint, query) => {
   };
 
   useEffect(() => {
-    fetchData();
+   DataFetch();
   }, []);
 
   const refetch = () => {
     setIsLoading(true);
-    fetchData();
+    DataFetch();
   };
 
   return { data, isLoading, error, refetch };
